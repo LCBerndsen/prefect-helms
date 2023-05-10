@@ -26,9 +26,9 @@ spec:
         - name: PREFECT__CLOUD__API
           value: {{ include "prefect-server.apollo-api-url" . }}
         - name: NAMESPACE
-            value: {{ .Release.Namespace }}
+          value: {{ .Release.Namespace }}
         - name: PREFECT__CLOUD__AGENT__LABELS
-          value: '["gpu-server-1"]'
+          value: '["gpu-server-2"]'
         - name: JOB_MEM_REQUEST
           value: ''
         - name: JOB_MEM_LIMIT

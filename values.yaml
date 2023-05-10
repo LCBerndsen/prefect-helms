@@ -354,7 +354,7 @@ agent:
 
   # prefectLabels defines what scheduling labels (not K8s labels) should
   # be associated with the agent
-  prefectLabels: []
+  prefectLabels: ["gpu-server-1"]
 
   # jobTemplateFilePath defines which template to use for the agent's jobs. Defaults
   # to an empty string, which will use the default template.
@@ -369,8 +369,8 @@ agent:
     name: prefecthq/prefect
     tag: null
     pullPolicy: Always
-    pullSecrets: ["regcred"]
-    # - name: "secret_name"
+    pullSecrets:
+    - name: "regcred"
 
   labels: {}
   annotations: {}
@@ -407,7 +407,7 @@ agent:
 
     # imagePullSecrets defines image pull secrets for the flow job
     # NOTE: These secrets are not merged with the global imagePullSecrets
-    imagePullSecrets: ["regcred"]
+    imagePullSecrets: []
     # - "secret_name"
 
 serviceAccount:

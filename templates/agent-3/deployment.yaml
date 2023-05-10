@@ -26,9 +26,9 @@ spec:
         - name: PREFECT__CLOUD__API
           value: {{ include "prefect-server.apollo-api-url" . }}
         - name: NAMESPACE
-            value: {{ .Release.Namespace }}
+          value: {{ .Release.Namespace }}
         - name: PREFECT__CLOUD__AGENT__LABELS
-          value: '["gpu-server-2"]'
+          value: '["gpu-server-3"]'
         - name: JOB_MEM_REQUEST
           value: ''
         - name: JOB_MEM_LIMIT
@@ -84,7 +84,7 @@ kind: RoleBinding
 metadata:
   name: kubernetes-agent-2-rbac
   namespace: {{ .Release.Namespace }}
-roleRef:`
+roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: Role
   name: kubernetes-agent-2-rbac
