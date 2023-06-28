@@ -1,0 +1,6 @@
+dependencies:
+- name: prefect-server
+  repository: https://prefecthq.github.io/server/
+  version: 2022.09.23
+digest: sha256:9acb61f5e2cbc9b04c9d2c129edd0a7ed4582f1c1eac863ad982d83e3336332a
+generated: "2023-06-27T17:07:55.974334+02:00"

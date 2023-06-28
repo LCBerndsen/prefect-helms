@@ -46,7 +46,7 @@ prefect-server:
       hosts:
         - prefect-ui.minikube.io
 ```
-
+  
 You can find more details about configuration [here](ADV_README.md)
 
 ### Deploy 

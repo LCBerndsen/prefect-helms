@@ -1,0 +1,33 @@
+# prefect-server:
+jobs:
+  createTenant:
+    enabled: true
+    tenant:
+      name: gerimedica
+      slug: gerimedica
+agent:
+  enabled: true
+  replicas: 1
+  env:
+    - name: PREFECT__CLOUD__AGENT__LABELS
+      value: '["gpu-server"]'
+apollo:
+  service:
+    type: LoadBalancer
+    # type: ClusterIP
+  # ingress:
+  #   enabled: true
+  #   ingressClassName: nginx
+  #   hosts:
+  #     - prefect-apollo.minikube.io
+ui:
+  apolloApiUrl: "http://10.12.1.54:4200/graphql"
+  # apolloApiUrl: "http://prefect-apollo.minikube.io/graphql"
+  service:
+    type: LoadBalancer
+    # type: ClusterIP
+  # ingress:
+  # enabled: true
+  # ingressClassName: nginx
+  # hosts:
+  # - prefect-ui.minikube.io
